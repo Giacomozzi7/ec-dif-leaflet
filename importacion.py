@@ -1,3 +1,5 @@
+#Por Francisco Giacomozzi R.
+#----------------------------------------------
 import csv
 from pymongo import MongoClient
 
