@@ -4,8 +4,8 @@ MONGO_URI = 'mongodb://localhost'
 
 client =MongoClient(MONGO_URI)
 
-db = client['datos']
-coleccion =db['data']
+db = client['reg']
+coleccion =db['vehiculos']
 
 def buscarId(sId,sLat,sLon):
     aCoord=[]; aQuery=[]; aInput=[];nVel=0;nSat=0
@@ -30,7 +30,7 @@ def buscarId(sId,sLat,sLon):
     aQuery.append(dictMatch);aQuery.append(dictGroup);aQuery.append(dictSort)
 
     #Obtiene latitud y longitud para el id ingresado
-    b = db.data.aggregate(aQuery)
+    b = db.vehiculos.aggregate(aQuery)
     for i in b:
         aCoord.append([i["lat"][0],i["lon"][0]])
         print(i["lat"][0],i["lon"][0])
